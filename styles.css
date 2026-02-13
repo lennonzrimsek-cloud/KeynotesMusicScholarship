@@ -8,8 +8,8 @@
   text-align: left;
   color: black;
   font-size: 18px;
-  margin-left: 25vw;
-  margin-right: 25vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
   margin-bottom:10px;
   text-indent: 30px;
   text-justify: auto;
@@ -74,8 +74,8 @@
  color: black;
   font-size: 18px;
   text-align: left;
-  margin-left: 25vw;
-  margin-right: 25vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
   margin-bottom:10px;
   text-justify: auto;
 
@@ -176,6 +176,7 @@
     width: 100%;
     max-width: 1300px;
     padding: 0;
+
   }
   .navbar_menu {
     display: grid;
@@ -187,6 +188,7 @@
     opacity: 1;
     transition: all 0.5s ease;
     z-index: -1;
+
   }
   .navbar_menu.active {
     background: #131313;
@@ -196,7 +198,6 @@
     z-index: 99;
     height: 60vh;
     font-size: 1.6rem;
-
   }
 
   #navbar_logo {
@@ -211,11 +212,14 @@
   }
   .navbar_item {
     width: 100%;
+
   }
   .navbar_links {
     text-align: center;
     padding: 2rem;
     width: 100%;
     display: table;
+
   }
+  .
 }
