@@ -217,6 +217,10 @@
     padding: 10px 0;
 
   }
+  .image_links {
+    max-width:768px;
+    height: auto;
+  }
   .navbar_menu {
     display: flex;          /* Use flex to stack */
     flex-direction: column; /* This does the stacking */
