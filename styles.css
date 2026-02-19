@@ -217,9 +217,9 @@
     padding: 10px 0;
 
   }
-  .image_links {
-    max-width:768px;
-    height: auto;
+  .image_links img{
+    max-width: 100%;
+    width:auto;
   }
   .navbar_menu {
     display: flex;          /* Use flex to stack */
