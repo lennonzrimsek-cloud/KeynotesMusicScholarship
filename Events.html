@@ -7,6 +7,7 @@
   <title>Events</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="body">
 <nav class="navbar">
   <div class="navbar_container">
@@ -47,7 +48,7 @@
   </div>
 </nav>
 <div class="image_links">
-<img src="Images/events-1.png" height="180" width="960"/>
+<img src="Images/events-1.png"/>
 </div>
 <br>
 <h2 class="h2-styled">A Sampling of our Organization’s Many Activities</h2>
@@ -124,6 +125,15 @@
   <br>
   1114 Grandview Avenue • Pittsburgh, PA 15211
 </p>
+<script>
+  const menu = document.querySelector('#mobile-menu');
+  const menuLinks = document.querySelector('.navbar_menu');
+
+  menu.addEventListener('click', function() {
+    menu.classList.toggle('is-active');
+    menuLinks.classList.toggle('active');
+  });
+</script>
 </body>
 <footer class="footer-styled">
   <p class="p-styled">Have questions or need more information?</p>

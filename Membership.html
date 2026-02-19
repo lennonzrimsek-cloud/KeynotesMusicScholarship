@@ -7,6 +7,7 @@
   <title>Membership</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="body">
 <nav class="navbar">
   <div class="navbar_container">
@@ -47,7 +48,7 @@
   </div>
 </nav>
 <div class="image_links">
-<img src="Images/membership.png" height="180" width="960"/>
+<img src="Images/membership.png"/>
 </div>
 <p class="p-styled">A Keynote membership has something to offer each person whether you assume a responsible position within the organization or just enjoy the many social events that are offered.  Our community is always growing, and we would love to welcome new members who share our passion for music.  Please complete the form below to renew your membership or enroll as a new member.
 </p>
@@ -69,9 +70,19 @@
 <div class="image_links">
 <a href="https://square.link/u/M0ExbQFl" class="a-styled">Pay Dues Online</a>
 </div>
+<script>
+  const menu = document.querySelector('#mobile-menu');
+  const menuLinks = document.querySelector('.navbar_menu');
+
+  menu.addEventListener('click', function() {
+    menu.classList.toggle('is-active');
+    menuLinks.classList.toggle('active');
+  });
+</script>
 </body>
 <footer class="footer-styled">
   <p class="p-styled">Have questions or need more information?</p>
   <a href="mailto:houdini5@hotmail.com?subject=KeynotesMusicScholarship" class="a-styled">Email Us</a>
 </footer>
+
 </html>

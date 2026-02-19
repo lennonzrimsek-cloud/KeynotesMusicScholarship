@@ -7,6 +7,7 @@
     <title>Keynotes Music Scholarship</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="body">
   <nav class="navbar">
     <div class="navbar_container">
@@ -82,9 +83,19 @@
     <p class="p-styled">To learn more about Keynotes membership, please visit:</p>
     <a href="http://www.keynotesmusicscholarship.com/membership" class="a-styled">Keynotes Membership</a>
   </div>
+  <script>
+    const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('.navbar_menu');
+
+    menu.addEventListener('click', function() {
+      menu.classList.toggle('is-active');
+      menuLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 <footer class="footer-styled">
   <p class="p-styled">Have questions or need more information?</p>
   <a href="mailto:houdini5@hotmail.com?subject=KeynotesMusicScholarship" class="a-styled">Email Us</a>
 </footer>
+
 </html>

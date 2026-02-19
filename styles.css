@@ -213,50 +213,74 @@
     justify-items: center;
     align-items: center;
     width: 100%;
-    max-width: 768px;
-    padding: 10px 0;
+    height: 80px; /* Force a consistent height */
+    position: relative; /* Add this so the menu attaches to the bottom of this div */
+    padding: 0;
 
-  }
-  .image_links img{
-    max-width: 100%;
-    width:auto;
-  }
-  .navbar_menu {
-    display: flex;          /* Use flex to stack */
-    flex-direction: column; /* This does the stacking */
-    position: relative;     /* Bring it back into the normal flow */
-    top: 0;                 /* Remove the -1000px offset */
-    width: 100%;
-    opacity: 1;
-    z-index: 1;
-  }
-  .navbar_menu.active {
-    background: #131313;
-    top: 100%;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 99;
-    height: 60vh;
-    font-size: 1.6rem;
-  }
+    .image_links img {
+      max-width: 100%;
+      width: auto;
+    }
 
-  #navbar_logo {
-  }
-  .navbar_toggle.bar{
-    width:25px;
-    height: 3px;
-    margin:5px auto;
-    transition: all 0.3s ease-in-out;
-    background: #fff;
-  }
-  .navbar_item {
-    width: 100%;
+    .navbar_menu {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: -1000px;
+      opacity: 0; /* Change from 1 to 0 */
+      transition: all 0.5s ease;
+      width: 100%;
+      z-index: -1;
+    }
 
-  }
-  .navbar_links {
-    text-align: center;
-    padding: 2rem;
-    width: 100%;
+    .navbar_menu.active {
+      display: flex;
+      background: #131313;
+      top: 100%;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 99;
+      font-size: 1.6rem;
+      height: auto; /* Grows to fit all your links */
+      padding-bottom: 2rem; /* Adds space at the bottom so it looks balanced */
+      overflow-y: visible; /* Ensures nothing is clipped */
+    }
 
+    .navbar_toggle .bar {
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+      background: #fff;
+      display: block;
+      cursor: pointer;
+    }
+
+    #navbar_logo {
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .navbar_item {
+      width: 100%;
+
+    }
+
+    .navbar_links {
+      text-align: center;
+      padding: 2rem;
+      width: 100%;
+
+    }
   }
 }
