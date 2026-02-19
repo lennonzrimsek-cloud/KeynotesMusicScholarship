@@ -210,8 +210,8 @@
   .navbar_container {
     display: grid;
     grid-template-columns: 1fr;
-    justify-content: space-between;
-    z-index: 1;
+    justify-items: center;
+    align-items: center;
     width: 100%;
     max-width: 768px;
     padding: 10px 0;
@@ -241,7 +241,6 @@
   }
 
   #navbar_logo {
-    padding-left: 25px;
   }
   .navbar_toggle.bar{
     width:25px;
