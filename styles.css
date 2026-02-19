@@ -207,6 +207,10 @@
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 768px) {
+  .p-styled, .h1-styled, .h2-styled, .h3-styled, .ol-styled {
+    margin-left: 5vw;  /* Reduce from 15vw so text has room */
+    margin-right: 5vw;
+  }
   .navbar_container {
     display: grid;
     grid-template-columns: 1fr;
@@ -216,8 +220,19 @@
     height: 80px; /* Force a consistent height */
     position: relative; /* Add this so the menu attaches to the bottom of this div */
     padding: 0;
-
-    .image_links img {
+  }
+  .scroll-container {
+    width: 90vw;       /* Make it take up more screen width on mobile */
+    margin-left: 5vw;
+    height: 250px;     /* Reduce height so images aren't huge on small screens */
+  }
+  .image-wrapper img {
+    height: 100%;      /* Respects the new 250px container height */
+    max-width: 80vw;   /* Prevents a single wide image from being wider than the phone */
+  }
+    .image_links img{
+      display: block;   /* Images are inline by default; block allows auto-margins */
+      margin: 0 auto;   /* Centers the image in its container */
       max-width: 100%;
       width: auto;
     }
@@ -283,4 +298,3 @@
 
     }
   }
-}
