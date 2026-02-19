@@ -2,26 +2,72 @@
   margin: 0 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Sans Serif Collection";
+  font-family: "Sans Serif Collection", serif;
+  line-height: 16pt;
 }
 .ol-styled {
   text-align: left;
   color: black;
   font-size: 18px;
   margin-left: 15vw;
-  margin-right: 15vw;
   margin-bottom:10px;
-  text-indent: 30px;
   text-justify: auto;
+}
+.image_links{
+  align-content: center;
+  text-align: center;
+}
+.scroll-container {
+  /* Set a maximum width and hide the overflow */
+  align-content: center;
+  margin-left: 15vw;
+  width: 66.6vw;
+  overflow: hidden;
+  position: relative;
+  /* Define the height of the gallery */
+  height: 400px;
+}
+
+.image-wrapper {
+  /* Use flexbox to arrange images horizontally */
+  display: flex;
+  white-space: nowrap;
+  /* Set the animation properties */
+  animation: autoscroll 20s linear infinite;
+  /* Pause animation on hover */
+  animation-play-state: running;
+}
+
+.image-wrapper:hover {
+  animation-play-state: paused;
+}
+
+.image-wrapper img {
+  /* Ensure images take up full height of container and maintain aspect ratio */
+  height: 100%;
+  width: auto;
+  padding: 0 5px; /* Add some spacing between images */
+  /* Prevent images from shrinking or stretching */
+  flex-shrink: 0;
+}
+
+/* Define the scrolling animation */
+@keyframes autoscroll {
+  0% {
+    /* Start position: 0% horizontal translation */
+    transform: translateX(0);
+  }
+  100% {
+    /* End position: Translate the width of the original image set to create a seamless loop */
+    /* You may need to adjust this percentage based on image count/width */
+    transform: translateX(-50%);
+  }
 }
 .body {
   background-color: #f7f7ff;
-  align-items: center;
-  text-align: center;
-  display: block;
+  display: flex;
   flex-direction:column;
-  margin-left: auto;
-  margin-right: auto;
+  min-height:100vh;
 }
 .footer-styled {
   background-color: #996515;
@@ -29,46 +75,51 @@
   /* Optional: add some styling to make the footer visible */
   padding: 20px;
   text-align: center;
+  width:100vw;
 }
 .a-styled{
   text-decoration: none;
   display: inline-block;
+  width: auto;
   background-color: #CC5500;
   font-size: 18px;
-  text-align: center;
-  justify-content: center; /* Centers content horizontally */
-  align-items: center;     /* Centers content vertically (optional) */
   height: 40px;
   color: white; /* Text color */
-  border-radius: 5px; /* Rounds the corners of the button */
+  border-radius: 12px; /* Rounds the corners of the button */
   font-weight: bold; /* Makes the text bold */
   padding: 2px 6px 2px 6px;
   border-top: 1px solid #CCCCCC;
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .a-styled:hover{
-  color: #CC5500;
+  color: #000000;
+  opacity: 0.8;
   transition: all 0.3s ease;
 }
 .h1-styled {
   color: black;
   font-size: 24px;
-  text-align: center;
+  text-align: left;
   margin-bottom: 10px;
+  margin-left: 15vw;
 }
 .h2-styled {
    color: black;
    font-size: 22px;
-   text-align: center;
+  text-align: left;
    margin-bottom: 10px;
+  margin-left: 15vw;
  }
 .h3-styled {
   color: black;
   font-size: 20px;
-  text-align: center;
+  text-align: left;
   margin-bottom: 10px;
+  margin-left: 15vw;
 }
 .p-styled {
  color: black;
@@ -78,17 +129,21 @@
   margin-right: 15vw;
   margin-bottom:10px;
   text-justify: auto;
-
+}
+.textbody {
+  display: flex;
+  background-color: #f7f7ff;
+  text-align: left;
+  flex-direction:column;
 }
 .navbar {
   margin: 0;
   background: #000000;
-  height: 80px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  width: 100vw;
   align-items: center;
   font-size: 1.2rem;
-  position: sticky;
   top: 0;
   z-index: 999;
 }
@@ -96,9 +151,8 @@
 .navbar_container {
   display: flex;
   justify-content: space-between;
-  height: 80px;
   z-index: 1;
-  width: 80%;
+  width: 85%;
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 50px;
@@ -148,47 +202,29 @@
   padding: 0 1rem;
   width: 100%;
 }
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  padding: 10px 20px;
-  height: 100%;
-  width: 100%;
-  border: none;
-  outline: none;
-  border-radius: 4px;
-  background: bisque;
-  background: -webkit-linear-gradient(to right, #999999, #cccccc);
-  color: #fff;
-}
 .navbar_links:hover{
   color: #c03221;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 768px) {
   .navbar_container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
     justify-content: space-between;
-    height: 80px;
     z-index: 1;
     width: 100%;
-    max-width: 1300px;
-    padding: 0;
+    max-width: 768px;
+    padding: 10px 0;
 
   }
   .navbar_menu {
-    display: grid;
-    grid-template-columns:auto;
-    margin: 0;
+    display: flex;          /* Use flex to stack */
+    flex-direction: column; /* This does the stacking */
+    position: relative;     /* Bring it back into the normal flow */
+    top: 0;                 /* Remove the -1000px offset */
     width: 100%;
-    position:absolute;
-    top: -1000px;
     opacity: 1;
-    transition: all 0.5s ease;
-    z-index: -1;
-
+    z-index: 1;
   }
   .navbar_menu.active {
     background: #131313;
@@ -218,8 +254,6 @@
     text-align: center;
     padding: 2rem;
     width: 100%;
-    display: table;
 
   }
-  .
 }
