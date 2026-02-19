@@ -233,7 +233,7 @@
     .image_links img{
       display: block;   /* Images are inline by default; block allows auto-margins */
       margin: 0 auto;   /* Centers the image in its container */
-      max-width: 100%;
+      max-width: 80%;
       width: auto;
     }
 
