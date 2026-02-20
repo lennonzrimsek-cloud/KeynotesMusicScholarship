@@ -2,8 +2,8 @@
   margin: 0 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Sans Serif Collection", serif;
-  line-height: 16pt;
+  font-family: "Sans Serif Collection", monospace;
+  line-height: 1.5;
 }
 .ol-styled {
   text-align: left;
@@ -31,24 +31,40 @@
 .image-wrapper {
   /* Use flexbox to arrange images horizontally */
   display: flex;
-  white-space: nowrap;
-  /* Set the animation properties */
-  animation: autoscroll 20s linear infinite;
-  /* Pause animation on hover */
-  animation-play-state: running;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory; /* Forces snapping to images */
+  scroll-behavior: smooth;
 }
 
 .image-wrapper:hover {
-  animation-play-state: paused;
+
+}
+.video-container {
+  display: flex;             /* Enables Flexbox */
+  justify-content: center;   /* Centers horizontally */
+  align-items: center;       /* Centers vertically (if container has height) */
+  padding: 20px;             /* Adds space around the video */
+}
+.centered-title{
+  text-align:center;
+  font-size: 24px;
+  color: black;
+  padding: 2px;
+  margin-top: 20px;
 }
 
+iframe {
+  width: 560px;              /* Set your desired width */
+  height: 315px;             /* Set your desired height */
+  border: 4px solid #fff;    /* A clean white border */
+  border-radius: 15px;       /* Smooth, rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adds depth with a soft shadow */
+}
 .image-wrapper img {
   /* Ensure images take up full height of container and maintain aspect ratio */
-  height: 100%;
-  width: auto;
-  padding: 0 5px; /* Add some spacing between images */
-  /* Prevent images from shrinking or stretching */
+  scroll-snap-align: start; /* Each image is a snap target */
   flex-shrink: 0;
+  width: 100%; /* Adjust based on your design */
 }
 
 /* Define the scrolling animation */
@@ -77,6 +93,23 @@
   text-align: center;
   width:100vw;
 }
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none; /* remove list bullets */
+  padding: 0px;
+}
+
+.pagination li a {
+  display: block; /* let links fill the list item */
+  padding: 8px 12px;
+  text-decoration: none;
+  border: 2px solid black;
+  color: black;
+  margin: 0 4px;
+  border-radius: 5px; /* add rounded borders */
+}
+
 .a-styled{
   text-decoration: none;
   display: inline-block;
@@ -210,6 +243,19 @@
   .p-styled, .h1-styled, .h2-styled, .h3-styled, .ol-styled {
     margin-left: 5vw;  /* Reduce from 15vw so text has room */
     margin-right: 5vw;
+  }
+  .centered-title{
+
+    font-size: 16px;
+    color: black;
+    padding: 5px;
+    margin-top: 10px;
+    line-height: 2.5;
+  }
+  iframe {
+    max-width: 100%;           /* Prevents the video from overflowing the screen */
+    aspect-ratio: 16 / 9;      /* Keeps the video shape perfect on all devices */
+    height: auto;              /* Allows height to scale with width */
   }
   .navbar_container {
     display: grid;

@@ -39,6 +39,11 @@
         </a>
       </li>
       <li class="navbar_item">
+        <a href="Livestream.html" class="navbar_links" id="livestream-page">
+          Livestream
+        </a>
+      </li>
+      <li class="navbar_item">
         <a href="Contact.html" class="navbar_links" id="contact-page">
           Contact
         </a>
@@ -55,19 +60,23 @@
 
 <p class="p-styled">We have variety of activities throughout the year.  Our year kicks off in May with the Scholarship Competition and Annual Dinner.  In June, we meet for our Annual Business Meeting and Election.  Our Annual Scholarship Fundraiser occurs in September.  The final event for the year is the Fall Tea which highlights one of our scholarship winners.
 </p>
-<div class="scroll-container">
+<div class="scroll-container" id="slider">
   <div class="image-wrapper">
-    <!-- Add your images here -->
-    <img src="Images/PianoKeys-768x428.png" height="428" width="768"/>
-
-    <img src="Images/Music-is-2.png" height="1080" width="1920"/>
-    <img src="Images/Want-to-get-in-touch--1024x1024.png" height="1024" width="1024"/>
-    <img src="Images/PianoKeys-768x428.png" height="428" width="768"/>
-
-    <img src="Images/Music-is-2.png" height="1080" width="1920"/>
-    <img src="Images/Want-to-get-in-touch--1024x1024.png" height="1024" width="1024"/>
+    <img src="Images/PianoKeys-768x428.png" />
+    <img src="Images/Music-is-2.png" />
+    <img src="Images/Want-to-get-in-touch--1024x1024.png" />
+    <!-- Additional images -->
   </div>
+
 </div>
+<br>
+<ul class="pagination">
+  <li><a href="#" onclick="changePage('prev')">&laquo;</a></li>
+  <li><a href="#" onclick="goToPage(0)">1</a></li>
+  <li><a href="#" onclick="goToPage(1)">2</a></li>
+  <li><a href="#" onclick="goToPage(2)">3</a></li>
+  <li><a href="#" onclick="goToPage('next')">&raquo;</a></li>
+</ul>
 <br>
 <h2 class="h2-styled">Event Calendar</h2>
 
@@ -137,6 +146,51 @@
     menu.classList.toggle('is-active');
     menuLinks.classList.toggle('active');
   });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    slider = document.querySelector('.image-wrapper');
+  });
+  let currentPage = 0;
+
+  function changePage(direction) {
+    const images = document.querySelectorAll('.image-wrapper img');
+
+    if (direction === 'next') {
+      if (currentPage < images.length - 1) {
+        goToPage(currentPage + 1);
+      }
+    } else if (direction === 'prev') {
+      if (currentPage > 0) {
+        goToPage(currentPage - 1);
+      }
+    }
+  }
+
+  function goToPage(pageIndex) {
+    const slider = document.querySelector('.image-wrapper');
+    const images = slider.querySelectorAll('img');
+
+    // Handle the 'next'/'prev' string cases if they come directly from onclick
+    if (pageIndex === 'next') {
+      changePage('next');
+      return;
+    }
+    if (pageIndex === 'prev') {
+      changePage('prev');
+      return;
+    }
+
+    // Update the tracker with the actual number
+    currentPage = pageIndex;
+
+    // Calculate position based on the first image's width
+    const scrollAmount = images[0].clientWidth * pageIndex;
+
+    slider.scrollTo({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }
 </script>
 </body>
 <footer class="footer-styled">
