@@ -133,7 +133,7 @@ iframe {
   justify-content: right; /* Horizontal centering */
   align-items: center;     /* Vertical centering */
   height: 100%;            /* Ensure div has height to center within */
-  max-width: 80%;
+  max-width: 100%;
 }
 .right-div {
   display: grid;
@@ -305,10 +305,10 @@ iframe {
     margin: 0 auto;
   }
   .left-div{
-    display: flex;
+    display: block;
     margin: 0 auto;
     align-items: center;
-    max-width: 90%;
+    max-width: 100%;
 
   }
   .right-div {
