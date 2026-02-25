@@ -300,15 +300,17 @@ iframe {
     display:grid;
     grid-template-columns: 1fr;
     align-items: center;
-    justify-items: center;
+    max-width: 95vw;
   }
   .left-div{
     margin: 0 auto;
+    align-items: center;
   }
   .right-div {
     align-items: center;
     width: 100%;
     text-align: left;
+    margin: 0 auto;
   }
   .centered-title{
 
