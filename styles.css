@@ -300,13 +300,16 @@ iframe {
     display:grid;
     grid-template-columns: 1fr;
     align-items: center;
-    max-width: 90vw;
+    max-width: 80vw;
+    justify-content: center;
+    margin: 0 auto;
   }
   .left-div{
     display: flex;
-    margin: 5vw auto;
+    margin: 0 auto;
     align-items: center;
-    max-width: 80%;
+    max-width: 90%;
+
   }
   .right-div {
     align-items: center;
@@ -357,6 +360,7 @@ iframe {
       margin: 5vw auto;   /* Centers the image in its container */
       max-width: 90%;
       width: auto;
+      justify-content: center;
     }
 
     .navbar_menu {
