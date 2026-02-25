@@ -119,12 +119,14 @@ iframe {
   height: 100%;            /* Ensure div has height to center within */
 }
 .right-div {
-  display: flex;
-  justify-content: center; /* Horizontal centering */
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  justify-content: center;
   align-items: center;
-  text-align: start;
-  max-width: 50%;
-  height: 100%;
+  text-align: center;
+  max-width: 80%;
+  height: 80%;
 }
 
 .pagination li a {
@@ -141,6 +143,7 @@ iframe {
   text-decoration: none;
   display: inline-block;
   width: auto;
+  max-width: 40%;
   background-color: #CC5500;
   font-size: 18px;
   height: 40px;
@@ -272,6 +275,16 @@ iframe {
     margin-left: 5vw;  /* Reduce from 15vw so text has room */
     margin-right: 5vw;
   }
+  .container {
+    display:grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+  .right-div {
+    align-items: center;
+    width: 100%;
+    text-align: left;
+  }
   .centered-title{
 
     font-size: 16px;
@@ -302,12 +315,12 @@ iframe {
   }
   .image-wrapper img {
     height: 100%;      /* Respects the new 250px container height */
-    max-width: 80vw;   /* Prevents a single wide image from being wider than the phone */
+    max-width: 85vw;   /* Prevents a single wide image from being wider than the phone */
   }
     .image_links img{
       display: block;   /* Images are inline by default; block allows auto-margins */
       margin: 0 auto;   /* Centers the image in its container */
-      max-width: 80%;
+      max-width: 90%;
       width: auto;
     }
 
