@@ -14,6 +14,22 @@
   text-justify: auto;
   list-style-type: none;
 }
+.p-styled-right{
+  color: black;
+  font-size: 18px;
+  text-align: left;
+  text-justify: auto;
+  margin: 0 auto;
+}
+.ul-styled {
+  text-align: left;
+  color: black;
+  font-size: 18px;
+  margin-left: 15vw;
+  margin-bottom:10px;
+  text-justify: auto;
+}
+
 .image_links{
   align-content: center;
   text-align: center;
@@ -117,6 +133,7 @@ iframe {
   justify-content: right; /* Horizontal centering */
   align-items: center;     /* Vertical centering */
   height: 100%;            /* Ensure div has height to center within */
+  max-width: 80%;
 }
 .right-div {
   display: grid;
@@ -125,7 +142,7 @@ iframe {
   justify-content: center;
   align-items: center;
   text-align: center;
-  max-width: 80%;
+  max-width: 60%;
   height: 80%;
 }
 
@@ -143,7 +160,7 @@ iframe {
   text-decoration: none;
   display: inline-block;
   width: auto;
-  max-width: 85%;
+  max-width: 95%;
   background-color: #CC5500;
   font-size: 18px;
   height: 40px;
@@ -282,6 +299,7 @@ iframe {
     display:grid;
     grid-template-columns: 1fr;
     align-items: center;
+    justify-items: center;
   }
   .left-div{
     margin: 0 auto;
