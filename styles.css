@@ -300,11 +300,13 @@ iframe {
     display:grid;
     grid-template-columns: 1fr;
     align-items: center;
-    max-width: 95vw;
+    max-width: 90vw;
   }
   .left-div{
-    margin: 0 auto;
+    display: flex;
+    margin: 5vw auto;
     align-items: center;
+    max-width: 80%;
   }
   .right-div {
     align-items: center;
