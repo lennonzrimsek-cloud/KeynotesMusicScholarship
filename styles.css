@@ -283,6 +283,9 @@ iframe {
     grid-template-columns: 1fr;
     align-items: center;
   }
+  .left-div{
+    margin: 0 auto;
+  }
   .right-div {
     align-items: center;
     width: 100%;
