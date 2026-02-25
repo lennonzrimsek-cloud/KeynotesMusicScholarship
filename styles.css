@@ -352,6 +352,12 @@ iframe {
       max-width: 90%;
       width: auto;
     }
+    .left-div img{
+      display: block;   /* Images are inline by default; block allows auto-margins */
+      margin: 5vw auto;   /* Centers the image in its container */
+      max-width: 90%;
+      width: auto;
+    }
 
     .navbar_menu {
       display: flex;
