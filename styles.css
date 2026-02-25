@@ -293,7 +293,8 @@ iframe {
     margin-right: 5vw;
   }
   .a-styled{
-
+    height: auto;
+    max-width: 90vw;
   }
   .container {
     display:grid;
