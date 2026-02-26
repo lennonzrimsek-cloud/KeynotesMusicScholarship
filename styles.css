@@ -8,7 +8,7 @@
 .ol-styled {
   text-align: left;
   color: black;
-  font-size: 18px;
+  font-size: 1.4rem;
   margin-left: 15vw;
   margin-bottom:10px;
   text-justify: auto;
@@ -16,7 +16,7 @@
 }
 .p-styled-right{
   color: black;
-  font-size: 18px;
+  font-size: 1.4rem;
   text-align: left;
   text-justify: auto;
   margin: 0 auto;
@@ -24,7 +24,7 @@
 .ul-styled {
   text-align: left;
   color: black;
-  font-size: 18px;
+  font-size: 1.4rem;
   margin-left: 15vw;
   margin-bottom:10px;
   text-justify: auto;
@@ -33,6 +33,27 @@
 .image_links{
   align-content: center;
   text-align: center;
+}
+hr.thin-line{
+  display:block;
+  height: 2px; /* Sets the thickness */
+  background-color: #048c7f; /* Sets the color */
+  border: none; /* Removes the default border */
+  width: 70vw;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+
+hr.thick-line {
+  display:block;
+  height: 5px; /* Sets the thickness */
+  background-color: #048c7f; /* Sets the color */
+  border: none; /* Removes the default border */
+  width: 80vw;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 .scroll-container {
   /* Set a maximum width and hide the overflow */
@@ -64,8 +85,8 @@
 }
 .centered-title{
   text-align:center;
-  font-size: 24px;
-  color: black;
+  font-size: 2rem;
+  color: #048c7f;
   padding: 2px;
   margin-top: 20px;
 }
@@ -249,7 +270,7 @@ iframe {
   align-items: center;
   cursor: pointer;
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 2rem;
 
 }
 
@@ -296,31 +317,36 @@ iframe {
     height: auto;
     max-width: 90vw;
   }
+  .p-styled-right{
+    font-size:1.2rem;
+  }
   .container {
     display:grid;
     grid-template-columns: 1fr;
     align-items: center;
-    max-width: 80vw;
+    max-width: 100vw;
     justify-content: center;
     margin: 0 auto;
+    height:auto;
+  }
+  hr.thin-line{
+    justify-content: left;
   }
   .left-div{
     display: block;
     margin: 0 auto;
     align-items: center;
     max-width: 100%;
-
   }
   .right-div {
     align-items: center;
-    width: 100%;
+    width: 100vw;
+    height:auto;
     text-align: left;
     margin: 0 auto;
   }
   .centered-title{
-
-    font-size: 16px;
-    color: black;
+    font-size:1.4rem;
     padding: 5px;
     margin-top: 10px;
     line-height: 2.5;
