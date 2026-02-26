@@ -314,6 +314,9 @@ iframe {
     margin-left: 5vw;  /* Reduce from 15vw so text has room */
     margin-right: 5vw;
   }
+  .h1-styled{
+    font-size:1.4rem;
+  }
   .a-styled{
     height: auto;
     max-width: 90vw;
