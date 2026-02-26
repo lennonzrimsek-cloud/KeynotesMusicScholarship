@@ -202,11 +202,9 @@ iframe {
   transition: all 0.3s ease;
 }
 .h1-styled {
-  color: black;
-  font-size: 24px;
-  text-align: left;
+  font-size: 1.6rem;
+  text-align: center;
   margin-bottom: 10px;
-  margin-left: 15vw;
 }
 .h2-styled {
    color: #048c7f;
