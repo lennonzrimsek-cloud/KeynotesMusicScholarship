@@ -271,7 +271,7 @@ iframe {
   align-items: center;
   cursor: pointer;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.6rem;
 
 }
 
@@ -424,7 +424,7 @@ iframe {
     }
 
     #navbar_logo {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
 
     #mobile-menu.is-active .bar:nth-child(2) {
