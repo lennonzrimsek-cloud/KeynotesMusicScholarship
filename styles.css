@@ -424,6 +424,7 @@ iframe {
     }
 
     #navbar_logo {
+      font-size: 1.4rem;
     }
 
     #mobile-menu.is-active .bar:nth-child(2) {
