@@ -65,17 +65,12 @@ hr.thick-line {
   /* Define the height of the gallery */
   height: 400px;
 }
-
 .image-wrapper {
   /* Use flexbox to arrange images horizontally */
   display: flex;
   overflow-x: scroll;
   scroll-snap-type: x mandatory; /* Forces snapping to images */
   scroll-behavior: smooth;
-}
-
-.image-wrapper:hover {
-
 }
 .video-container {
   display: flex;             /* Enables Flexbox */
@@ -125,19 +120,21 @@ iframe {
 }
 .footer-styled {
   background-color: #048c7f;
+  color: white;
   margin-top: auto;          /* 5. Push the footer to the bottom, filling the remaining space with margin */
   /* Optional: add some styling to make the footer visible */
   padding: 20px;
   text-align: center;
   width:100vw;
   font-family: Roboto, sans-serif;
-  font-size: 28px;
+  font-size: 1.6rem;
 }
 .pagination {
   display: flex;
+  color: #048c7f;
   justify-content: center;
   list-style: none; /* remove list bullets */
-  padding: 0px;
+  padding: 0;
 }
 .container {
   display: grid; /* Enables grid layout */
@@ -164,7 +161,7 @@ iframe {
   align-items: center;
   text-align: center;
   max-width: 60%;
-  height: 80%;
+  height: 90%;
 }
 
 .pagination li a {
