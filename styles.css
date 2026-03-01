@@ -302,7 +302,6 @@ iframe {
   display: flex;
   justify-content: space-between;
   z-index: 1;
-  width: 85%;
   max-width: 1300px;
   height:auto;
   margin: 0 auto;
@@ -320,7 +319,7 @@ iframe {
   cursor: pointer;
   text-decoration: none;
   font-size: 1.6rem;
-
+  text-indent:0;
 }
 
 .fa-gem {
