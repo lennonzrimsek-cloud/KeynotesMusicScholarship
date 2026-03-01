@@ -62,13 +62,15 @@
 
 <p class="p-styled">We have variety of activities throughout the year.  Our year kicks off in May with the Scholarship Competition and Annual Dinner.  In June, we meet for our Annual Business Meeting and Election.  Our Annual Scholarship Fundraiser occurs in September.  The final event for the year is the Fall Tea which highlights one of our scholarship winners.
 </p>
-
+<br>
 <div class="scroll-container" id="slider">
   <div class="image-wrapper">
-    <img src="Images/PianoKeys-768x428.png" />
-    <img src="Images/Music-is-2.png" />
-    <img src="Images/Want-to-get-in-touch--1024x1024.png" />
     <!-- Additional images -->
+    <img src="Images/32a0d559697c03a62593f9fd154b3ae6-1200x900.jpg" height="900" width="1200"/>
+    <img src="Images/78d2793ef0cb62474d563d8cdc90f8cf-1200x900.jpg" height="900" width="1200"/>
+    <img src="Images/90e6808292f7eea54db5cf1c8b6602ef-1-1200x900.jpg" height="900" width="1200"/>
+    <img src="Images/270d48fee20c42e51125d86d70aef228-1200x900.jpg" height="900" width="1200"/>
+    <img src="Images/315e96fb1c0fa734f1a7250f2c720257-1200x900.jpg" height="900" width="1200"/>
   </div>
 </div><br>
 
@@ -77,13 +79,15 @@
   <li><a href="#" onclick="goToPage(0)">1</a></li>
   <li><a href="#" onclick="goToPage(1)">2</a></li>
   <li><a href="#" onclick="goToPage(2)">3</a></li>
+  <li><a href="#" onclick="goToPage(3)">4</a></li>
+  <li><a href="#" onclick="goToPage(4)">5</a></li>
   <li><a href="#" onclick="goToPage('next')">&raquo;</a></li>
 </ul><br>
 
 <h2 class="h2-styled">Event Calendar</h2>
 <hr class="thin-line">
 <h3 class="h3-styled">Join us at the Keynotes Annual Fall Tea:
-  <br><br>
+  <br>
 </h3>
 
 <b class="p-styled">
@@ -91,55 +95,99 @@
 </b>
 
 <p class="p-styled">
-  Doors open at 12:00 PM
-  <br>
-  Performance begins at 12:30 PM
-  <br>
-  Tea and pastries served at 1:00 PM
-  <br>
-  RSVP by September 18
-  <br>
-  Southminster House • 801 Washington Road • Pittsburgh, PA 15228
-  <br>
-  Begin the Holiday Season with Keynotes at the 63rd Annual Light Up Night at the LeMont
-  Benefitting the Keynotes Scholarships
-  <br>
-  </p>
+  Doors open at 12:00 PM</p>
+<p class="p-styled">
+  Performance begins at 12:30 PM</p>
+<p class="p-styled">
+  Tea and pastries served at 1:00 PM</p>
+<p class="p-styled">
+  RSVP by September 18</p>
+<b class="p-styled">
+  Southminster House </b>
+<b class="p-styled">801 Washington Road </b>
+<b class="p-styled">Pittsburgh, PA 15228</b>
+
 <hr class="thin-line">
+
+<h3 class="h3-styled">
+  Begin the Holiday Season with Keynotes at the 63rd Annual Light Up Night at the LeMont
+  Benefitting the Keynotes Scholarships:</h3>
   <b class="p-styled">
   Saturday, November 22, 2025
   </b><br>
 
 <p class="p-styled">
-  6:00 PM Cocktails Cash Bar
+  6:00 PM Cocktails Cash Bar</p>
+
+<p class="p-styled">7:00 PM Dinner</p>
+
+<p class="p-styled">Entertainment throughout the evening</p>
+
+<p class="p-styled"> 9:30 PM Holiday Fireworks Display</p>
   <br>
-  7:00 PM Dinner
-  <br>
-  Entertainment throughout the evening
-  <br>
-  9:30 PM Holiday Fireworks Display
-  <br><br>
-  Valet Parking
+<p class="p-styled">
+  Valet Parking</p>
   <br>
 </p>
 <hr class="thin-line">
 <p class="p-styled">
   Cost of the event is $100 – Payable here: <a href="https://square.link/u/C1OvyW52">Buy Tickets</a>
-  or please send a check payable to Keynotes to:
-  <br>
+  or please send a check payable to Keynotes to:</p>
+  <b class="p-styled">
   Lynn Hagan
-  <br>
+    </b>
+  <b class="p-styled">
   248 Merion Drive
-  <br>
+  </b>
+<b class="p-styled">
   Pittsburgh, PA 15228
-  <br>
+  </b>
+<b class="p-styled">
   1114 Grandview Avenue • Pittsburgh, PA 15211
-</p>
+</b>
 
 <script>
   const menu = document.querySelector('#mobile-menu');
   const menuLinks = document.querySelector('.navbar_menu');
+  const wrapper = document.querySelector('.image-wrapper');
+  let idleTimer;
+  let autoScrollInterval;
 
+  function startAutoScroll() {
+    // Clear any existing interval to prevent speed-up
+    stopAutoScroll();
+
+    autoScrollInterval = setInterval(() => {
+      const scrollAmount = wrapper.clientWidth; // Scroll by one full image width
+      const isAtEnd = wrapper.scrollLeft + wrapper.offsetWidth >= wrapper.scrollWidth - 10;
+
+      if (isAtEnd) {
+        wrapper.scrollTo({ left: 0, behavior: 'smooth' }); // Loop back to start
+      } else {
+        wrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }, 3000); // Transitions to next image every 3 seconds once active
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+  }
+
+  function resetIdleTimer() {
+    stopAutoScroll(); // Stop scrolling while user is interacting
+    clearTimeout(idleTimer);
+
+    // Wait 5 seconds of total silence before starting auto-scroll again
+    idleTimer = setTimeout(startAutoScroll, 3000);
+  }
+
+  // Listen for any interaction
+  wrapper.addEventListener('scroll', resetIdleTimer);
+  wrapper.addEventListener('touchstart', resetIdleTimer);
+  wrapper.addEventListener('mousedown', resetIdleTimer);
+
+  // Initialize on page load
+  resetIdleTimer();
   menu.addEventListener('click', function() {
     menu.classList.toggle('is-active');
     menuLinks.classList.toggle('active');
@@ -165,6 +213,7 @@
   }
 
   function goToPage(pageIndex) {
+    event.preventDefault();
     const slider = document.querySelector('.image-wrapper');
     const images = slider.querySelectorAll('img');
 

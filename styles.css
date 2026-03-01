@@ -15,11 +15,11 @@
   list-style-type: none;
 }
 .p-styled-right{
+  text-indent: 0;
+  margin-top: -20px;
   color: black;
   font-size: 1.4rem;
   text-align: left;
-  text-justify: auto;
-  margin: 0 auto;
 }
 .ul-styled {
   text-align: left;
@@ -55,23 +55,52 @@ hr.thick-line {
   margin-bottom: 20px;
   border-radius: 5px;
 }
+
 .scroll-container {
-  /* Set a maximum width and hide the overflow */
-  align-content: center;
   margin-left: 15vw;
   width: 66.6vw;
   overflow: hidden;
   position: relative;
-  /* Define the height of the gallery */
-  height: 400px;
-}
-.image-wrapper {
-  /* Use flexbox to arrange images horizontally */
+  /* Use display flex to center the wrapper itself if needed */
   display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory; /* Forces snapping to images */
-  scroll-behavior: smooth;
+  align-items: center;
+  background: #f8f8f8; /* Light background to see centering */
+  justify-content: center;
+  max-height: 600px;
 }
+
+.image-wrapper {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  /* Snap to the center of the container */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  /* Hide scrollbar */
+  scrollbar-width: none;
+}
+.image-wrapper::-webkit-scrollbar { display: none; }
+
+.image-wrapper img {
+  /* Set snap point to center */
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  width: 100%;
+
+  /* Maintain the 1200x900 ratio precisely */
+  aspect-ratio: 1200 / 900;
+  object-fit: scale-down;
+
+  /* Adds a gap between images so they don't touch */
+  margin-right: 20px;
+  border-radius: 12px;
+}
+
+/* Removes margin from the last image to keep scrolling clean */
+.image-wrapper img:last-child {
+  margin-right: 0;
+}
+
 .video-container {
   display: flex;             /* Enables Flexbox */
   justify-content: center;   /* Centers horizontally */
@@ -93,12 +122,7 @@ iframe {
   border-radius: 15px;       /* Smooth, rounded corners */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adds depth with a soft shadow */
 }
-.image-wrapper img {
-  /* Ensure images take up full height of container and maintain aspect ratio */
-  scroll-snap-align: start; /* Each image is a snap target */
-  flex-shrink: 0;
-  width: 100%; /* Adjust based on your design */
-}
+
 
 /* Define the scrolling animation */
 @keyframes autoscroll {
@@ -117,6 +141,7 @@ iframe {
   display: flex;
   flex-direction:column;
   min-height:100vh;
+  text-indent: 15px;
 }
 .footer-styled {
   background-color: #048c7f;
@@ -135,6 +160,21 @@ iframe {
   justify-content: center;
   list-style: none; /* remove list bullets */
   padding: 0;
+  text-indent: 0;
+}
+.pagination a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.pagination a:hover {
+  background-color: #048c7f;
+  color: white;
+  border-color: #048c7f;
 }
 .container {
   display: grid; /* Enables grid layout */
@@ -176,6 +216,7 @@ iframe {
 
 .a-styled{
   text-decoration: none;
+  text-indent: 0;
   display: inline-block;
   width: auto;
   max-width: 95%;
@@ -224,8 +265,6 @@ iframe {
   text-align: left;
   margin-left: 15vw;
   margin-right: 15vw;
-  margin-bottom:10px;
-  text-justify: auto;
 }
 .textbody {
   display: flex;
@@ -320,12 +359,11 @@ iframe {
     font-size:1.2rem;
   }
   .container {
-    display:grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     max-width: 100vw;
     justify-content: center;
-    margin: 0 auto;
     height:auto;
   }
   hr.thin-line{
@@ -333,16 +371,9 @@ iframe {
   }
   .left-div{
     display: block;
-    margin: 0 auto;
-    align-items: center;
-    max-width: 100%;
   }
   .right-div {
-    align-items: center;
-    width: 100vw;
-    height:auto;
     text-align: left;
-    margin: 0 auto;
   }
   .centered-title{
     font-size:1.4rem;
