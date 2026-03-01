@@ -348,6 +348,12 @@ iframe {
     margin-left: 5vw;  /* Reduce from 15vw so text has room */
     margin-right: 5vw;
   }
+  .ol-styled{
+    text-indent: 0;
+  }
+  .ul-styled{
+    text-indent: 0;
+  }
   .h1-styled{
     font-size:1.4rem;
   }
