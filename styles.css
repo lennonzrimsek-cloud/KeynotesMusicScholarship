@@ -9,8 +9,8 @@
   text-align: left;
   color: black;
   font-size: 1.4rem;
-  margin-left: 15vw;
-  margin-bottom:10px;
+  padding-left: min(8em,8%);
+  padding-right: min(8em,8%);
   text-justify: auto;
   list-style-type: none;
 }
@@ -25,8 +25,8 @@
   text-align: left;
   color: black;
   font-size: 1.4rem;
-  margin-left: 15vw;
-  margin-bottom:10px;
+  padding-left: min(8em,8%);
+  padding-right: min(8em,8%);
   text-justify: auto;
 }
 
@@ -39,9 +39,8 @@ hr.thin-line{
   height: 2px; /* Sets the thickness */
   background-color: #048c7f; /* Sets the color */
   border: none; /* Removes the default border */
-  width: 70vw;
-  margin: 0 auto;
-  margin-bottom: 10px;
+  width: 80vw;
+  margin: min(1em, 5%) auto;
   border-radius: 2px;
 }
 
@@ -57,7 +56,6 @@ hr.thick-line {
 }
 
 .scroll-container {
-  margin-left: 15vw;
   width: 66.6vw;
   overflow: hidden;
   position: relative;
@@ -109,7 +107,7 @@ hr.thick-line {
 }
 .centered-title{
   text-align:center;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, calc(6vw + 1rem), 4rem);
   color: #048c7f;
   padding: 2px;
   margin-top: 20px;
@@ -151,11 +149,12 @@ iframe {
   color: white;
   margin-top: auto;          /* 5. Push the footer to the bottom, filling the remaining space with margin */
   /* Optional: add some styling to make the footer visible */
-  padding: 20px;
+  padding-left: min(6em,8%);
+  padding-right: min(6em,8%);;
   text-align: center;
   width:100vw;
   font-family: Roboto, sans-serif;
-  font-size: 1.6rem;
+  font-size: clamp(1rem, calc(3vw + 1rem), 2rem);
 }
 .pagination {
   display: flex;
@@ -225,8 +224,8 @@ iframe {
   width: auto;
   max-width: 95%;
   background-color: #CC5500;
-  font-size: 18px;
-  height: 40px;
+  font-size: 1.2rem;
+  height: 2rem;
   color: white; /* Text color */
   border-radius: 12px; /* Rounds the corners of the button */
   font-weight: bold; /* Makes the text bold */
@@ -245,40 +244,54 @@ iframe {
   transition: all 0.3s ease;
 }
 .h1-styled {
-  font-size: 1.6rem;
+  font-size: clamp(1.4rem, calc(1vw + 2rem), 3.2rem);
   text-align: center;
   margin-bottom: 10px;
   text-indent: 0;
 }
 .h2-styled {
-   color: #048c7f;
-   font-size: 26px;
+  font-size: clamp(1.4rem, calc(1vw + 2rem), 3.5rem);
+  color: #048c7f;
   text-align: left;
   justify-content: left;
   align-content:start;
-   margin-bottom: 10px;
-  margin-left: 15vw;
+  padding-left: min(4em,8%);
+  padding-right: min(4em,8%);
   font-family:  Roboto, sans-serif;
   text-indent: 0;
  }
+.h2-styled2 {
+  font-size: clamp(1.4rem, calc(1vw + 2rem), 3.5rem);
+  color: #048c7f;
+  text-align: left;
+  justify-content: left;
+  align-content:start;
+  padding-left: min(4em,27%);
+  padding-right: min(4em,27%);
+  font-family:  Roboto, sans-serif;
+  text-indent: 0;
+}
 .h3-styled {
   color: black;
-  font-size: 20px;
+  font-size: clamp(1.3rem, calc(1vw + .5rem), 1.5rem);
   text-align: left;
-  margin-bottom: 10px;
-  margin-left: 15vw;
+  margin-bottom: 1em;
+  padding-left: min(5em,6%);
+  padding-right: min(5em,6%);
   text-indent: 0;
 }
 .p-styled {
  color: black;
-  font-size: 18px;
+  font-size: clamp(1.2rem, calc(2vw + 1rem), 1.4rem);
   text-align: left;
-  margin-left: 15vw;
-  margin-right: 15vw;
+  padding-left: min(8em,6%);
+  padding-right: min(8em,6%);
 }
 .textbody {
   display: flex;
   flex-direction: column;
+  padding-left: min(8em,6%);
+  padding-right: min(8em,6%);
   background-color: #f7f7ff;
   text-align: left;
   align-items: start;
@@ -357,25 +370,15 @@ iframe {
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 768px) {
-  .p-styled, .h1-styled, .h2-styled, .h3-styled, .ol-styled {
-    margin-left: 5vw;  /* Reduce from 15vw so text has room */
-    margin-right: 5vw;
-  }
   .ol-styled{
     text-indent: 0;
   }
   .ul-styled{
     text-indent: 0;
   }
-  .h1-styled{
-    font-size:1.4rem;
-  }
   .a-styled{
     height: auto;
     max-width: 90vw;
-  }
-  .p-styled-right{
-    font-size:1.2rem;
   }
   .container {
     display: flex;
