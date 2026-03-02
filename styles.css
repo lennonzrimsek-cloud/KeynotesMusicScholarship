@@ -282,7 +282,7 @@ iframe {
 }
 .p-styled {
  color: black;
-  font-size: clamp(1.2rem, calc(2vw + 1rem), 1.4rem);
+  font-size: clamp(1rem, calc(1vw + 1rem), 1.2rem);
   text-align: left;
   padding-left: min(8em,6%);
   padding-right: min(8em,6%);
