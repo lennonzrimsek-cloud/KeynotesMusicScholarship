@@ -19,6 +19,8 @@
   margin-top: -20px;
   color: black;
   font-size: 1.4rem;
+  padding-left: min(1em,2%);
+  padding-right: min(1em,2%);
   text-align: left;
 }
 .ul-styled {
@@ -35,12 +37,11 @@
   text-align: center;
 }
 hr.thin-line{
-  display:block;
   height: 2px; /* Sets the thickness */
   background-color: #048c7f; /* Sets the color */
   border: none; /* Removes the default border */
-  width: 80vw;
-  margin: min(1em, 5%) auto;
+  width: 50vw;
+  margin: 2rem;
   border-radius: 2px;
 }
 
@@ -50,8 +51,7 @@ hr.thick-line {
   background-color: #048c7f; /* Sets the color */
   border: none; /* Removes the default border */
   width: 80vw;
-  margin: 0 auto;
-  margin-bottom: 20px;
+  margin: auto;
   border-radius: 5px;
 }
 
@@ -62,7 +62,6 @@ hr.thick-line {
   /* Use display flex to center the wrapper itself if needed */
   display: flex;
   align-items: center;
-  background: #f8f8f8; /* Light background to see centering */
   justify-content: center;
   max-height: 600px;
 }
@@ -135,7 +134,8 @@ iframe {
   }
 }
 .body {
-  background-color: #f7f7ff;
+  background-color: #679c9c;
+  background-image: linear-gradient(117deg,rgba(103, 156, 156, 1) 0%, rgba(212, 212, 212, 1) 100%);
   display: flex;
   flex-direction:column;
   min-height:100vh;
@@ -180,8 +180,18 @@ iframe {
 }
 .container {
   display: grid; /* Enables grid layout */
+  width: 90%;
+  max-width: 1100px;
+  margin: auto; /* Center the container on the page */
   grid-template-columns: 1fr 1fr; /* Creates two columns, each taking 1 fractional unit (equal width) */
-  width: 100%;
+  padding: clamp(1rem, calc(1vw + 2rem), 8%);
+  background-color: #ffffff; /* Clean white background */
+  border-radius: 12px; /* Soft, rounded corners */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft, subtle shadow for depth */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+  /* Typography */
+  color: #333;
+  line-height: 1.6;
 }
 
 .left-div, .right-div {
@@ -202,9 +212,8 @@ iframe {
   justify-items: center;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  max-width: 60%;
-  height: 90%;
+  text-align: left;
+  padding: clamp(.5rem, calc(1vw + 3rem), 20%);
 }
 
 .pagination li a {
@@ -255,8 +264,8 @@ iframe {
   text-align: left;
   justify-content: left;
   align-content:start;
-  padding-left: min(4em,8%);
-  padding-right: min(4em,8%);
+  padding-left: min(3em,5%);
+  padding-right: min(3em,5%);
   font-family:  Roboto, sans-serif;
   text-indent: 0;
  }
@@ -266,8 +275,8 @@ iframe {
   text-align: left;
   justify-content: left;
   align-content:start;
-  padding-left: min(4em,27%);
-  padding-right: min(4em,27%);
+  padding-left: min(3em,5%);
+  padding-right: min(3em,5%);
   font-family:  Roboto, sans-serif;
   text-indent: 0;
 }
@@ -290,14 +299,24 @@ iframe {
 .textbody {
   display: flex;
   flex-direction: column;
-  padding-left: min(8em,6%);
-  padding-right: min(8em,6%);
-  background-color: #f7f7ff;
+  width: 90%;
+  max-width: 1100px;
+  margin: auto; /* Center the container on the page */
   text-align: left;
-  align-items: start;
-  justify-content: left;
+  align-items: center;
+  justify-content: center;
   align-content:start;
   font-family:  Roboto, sans-serif;
+  padding: 1rem;
+  /* Modern Aesthetics */
+  background-color: #ffffff; /* Clean white background */
+  border-radius: 12px; /* Soft, rounded corners */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft, subtle shadow for depth */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+
+  /* Typography */
+  color: #333;
+  line-height: 1.6;
 }
 .navbar {
   margin: 0;
