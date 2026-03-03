@@ -139,7 +139,6 @@ iframe {
   display: flex;
   flex-direction:column;
   min-height:100vh;
-  text-indent: 15px;
   justify-content: center;
   align-items: center;
   align-content:center;
@@ -230,11 +229,11 @@ iframe {
   text-decoration: none;
   text-indent: 0;
   display: inline-block;
-  width: auto;
+  width: 100%;
   max-width: 95%;
   background-color: #CC5500;
   font-size: 1.2rem;
-  height: 2rem;
+  height: auto;
   color: white; /* Text color */
   border-radius: 12px; /* Rounds the corners of the button */
   font-weight: bold; /* Makes the text bold */
@@ -244,6 +243,8 @@ iframe {
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
   margin-top: 10px;
+  align-items: center;
+  text-align: center;
   justify-content: center;
   margin-bottom: 10px;
 }
@@ -302,10 +303,10 @@ iframe {
   width: 90%;
   max-width: 1100px;
   margin: auto; /* Center the container on the page */
-  text-align: left;
+  text-align: center;
   align-items: center;
   justify-content: center;
-  align-content:start;
+  align-content:center;
   font-family:  Roboto, sans-serif;
   padding: 1rem;
   /* Modern Aesthetics */
