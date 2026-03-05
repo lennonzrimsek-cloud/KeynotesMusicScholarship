@@ -512,6 +512,7 @@ iframe {
 
     #navbar_logo {
       font-size: 1.2rem;
+      padding: 0 20px;
     }
 
     #mobile-menu.is-active .bar:nth-child(2) {
