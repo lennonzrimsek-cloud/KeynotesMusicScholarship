@@ -447,6 +447,7 @@ iframe {
   .navbar_container {
     display: grid;
     grid-template-columns: 1fr;
+    justify-content: center;
     justify-items: center;
     align-items: center;
     width: 100%;
@@ -471,7 +472,7 @@ iframe {
     .left-div img{
       display: block;   /* Images are inline by default; block allows auto-margins */
       margin: 5vw auto;   /* Centers the image in its container */
-      max-width: 90%;
+      max-width: 80%;
       width: auto;
       justify-content: center;
     }
