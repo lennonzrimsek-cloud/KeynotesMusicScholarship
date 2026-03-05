@@ -14,8 +14,8 @@
   text-align: left;
   color: black;
   font-size: 1.4rem;
-  padding-left: min(8em,8%);
-  padding-right: min(8em,8%);
+  padding-left: min(6em,5%);
+  padding-right: min(6em,5%);
   text-justify: auto;
   list-style-type: none;
 }
@@ -32,8 +32,8 @@
   text-align: left;
   color: black;
   font-size: 1.4rem;
-  padding-left: min(8em,8%);
-  padding-right: min(8em,8%);
+  padding-left: min(6em,5%);
+  padding-right: min(6em,5%);
   text-justify: auto;
 }
 
@@ -202,19 +202,23 @@ iframe {
 }
 
 .left-div, .right-div {
-  padding: 10px;
   box-sizing: border-box;
 }
 
 .left-div {
   display: flex;
-  justify-content: right; /* Horizontal centering */
+  justify-content: center; /* Horizontal centering */
   align-items: center;     /* Vertical centering */
   height: auto;            /* Ensure div has height to center within */
   width: clamp(400px, 50vw, 500px);
+  padding: clamp(10px, calc(1vw + 2rem), 5%);
 }
 .left-div img{
-
+            aspect-ratio: inherit;
+            height:auto;
+            object-fit: scale-down;
+            margin: 0 auto;
+            max-width:100%;
 }
 .right-div {
   display: grid;
@@ -468,9 +472,7 @@ iframe {
     }
     .left-div img{
       display: block;   /* Images are inline by default; block allows auto-margins */
-      margin: 5vw auto;   /* Centers the image in its container */
-      max-width: 90%;
-      width: auto;
+      margin: 0 auto;   /* Centers the image in its container */
       justify-content: center;
     }
 
