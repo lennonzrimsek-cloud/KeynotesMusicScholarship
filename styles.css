@@ -359,7 +359,6 @@ iframe {
   background-color: white;
   background-image: linear-gradient(to top, #CC5500 0%, #cccccc 100%);
   background-size: 100%;
-  padding-right: 10rem;
   text-align:center;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -370,6 +369,7 @@ iframe {
   text-decoration: none;
   font-size: 1.6rem;
   text-indent:0;
+  padding-right: 80px;
 }
 
 .fa-gem {
@@ -391,7 +391,7 @@ iframe {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  padding: 0 1rem;
+  padding: 0 .5rem;
   height: 100%;
   transition: all 0.3s ease;
 }
