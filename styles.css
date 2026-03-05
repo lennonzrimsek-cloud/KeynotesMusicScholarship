@@ -407,7 +407,7 @@ iframe {
   transition: all 0.3s ease;
   cursor:pointer;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 960px) {
   .ol-styled{
     text-indent: 0;
   }
@@ -448,7 +448,7 @@ iframe {
   .navbar_container {
     display: grid;
     grid-template-columns: 1fr;
-    justify-content: center;
+    justify-content: space-between;
     justify-items: center;
     align-items: center;
     width: 100%;
@@ -511,7 +511,7 @@ iframe {
     }
 
     #navbar_logo {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       padding: 0 20px 0 0;
     }
 
