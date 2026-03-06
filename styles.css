@@ -28,6 +28,7 @@
   padding-right: min(1em,2%);
   text-align: left;
 }
+
 .ul-styled {
   text-align: left;
   color: black;
@@ -62,11 +63,12 @@ hr.thick-line {
 }
 
 .scroll-container {
-  width: 66.6vw;
+  width: 600px;
   overflow: hidden;
   position: relative;
   /* Use display flex to center the wrapper itself if needed */
   display: flex;
+  align-content: center;
   align-items: center;
   justify-content: center;
   max-height: 600px;
@@ -75,6 +77,7 @@ hr.thick-line {
 .image-wrapper {
   display: flex;
   width: 100%;
+  height: 100%; /* Ensure wrapper fills the 600px container */
   overflow-x: auto;
   /* Snap to the center of the container */
   scroll-snap-type: x mandatory;
@@ -82,25 +85,61 @@ hr.thick-line {
   /* Hide scrollbar */
   scrollbar-width: none;
 }
-.image-wrapper::-webkit-scrollbar { display: none; }
 
-.image-wrapper img {
-  /* Set snap point to center */
+.image-wrapper2 {
+  display: flex;
+  width: 100%;
+  height: 100%; /* Ensure wrapper fills the 600px container */
+  overflow-x: auto;
+  /* Snap to the center of the container */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  /* Hide scrollbar */
+  scrollbar-width: none;
+}
+.image-wrapper2 img {
   scroll-snap-align: center;
   flex-shrink: 0;
+
+  /* Sizing Logic */
   width: 100%;
+  height: 100%; /* Force image height to container height */
+  max-height: 350px;
 
-  /* Maintain the 1200x900 ratio precisely */
-  aspect-ratio: 1200 / 900;
-  object-fit: scale-down;
+  /* Scaling Logic */
+  object-fit: contain; /* Scale down to fit while keeping ratio */
 
-  /* Adds a gap between images so they don't touch */
+  /* Background Logic */
+  background-color: rgba(0, 0, 0, 0.1); /* Your low-opacity color */
   margin-right: 20px;
   border-radius: 12px;
 }
 
-/* Removes margin from the last image to keep scrolling clean */
+.image-wrapper::-webkit-scrollbar { display: none; }
+.image-wrapper2::-webkit-scrollbar { display: none; }
+.image-wrapper img {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+
+  /* Sizing Logic */
+  width: 100%;
+  height: 100%; /* Force image height to container height */
+  max-height: 400px;
+
+  /* Scaling Logic */
+  object-fit: contain; /* Scale down to fit while keeping ratio */
+
+  /* Background Logic */
+  background-color: rgba(0, 0, 0, 0.1); /* Your low-opacity color */
+
+  margin-right: 20px;
+  border-radius: 12px;
+}
+
 .image-wrapper img:last-child {
+  margin-right: 0;
+}
+.image-wrapper2 img:last-child {
   margin-right: 0;
 }
 
@@ -308,8 +347,6 @@ iframe {
 .p-styled {
  color: black;
   font-size: clamp(1rem, calc(1vw + 1rem), 1.2rem);
-  padding-left: min(8em,2%);
-  padding-right: min(8em,2%);
 }
 .textbody {
   display: flex;
@@ -322,15 +359,30 @@ iframe {
   justify-content: center;
   align-content:center;
   font-family:  Roboto, sans-serif;
-  padding: 1rem;
   /* Modern Aesthetics */
   background-color: #ffffff; /* Clean white background */
   border-radius: 12px; /* Soft, rounded corners */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft, subtle shadow for depth */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
-
+  padding-left: min(8em,2%);
+  padding-top: min(1em, 2%);
+  padding-bottom: min(1em, 2%);
+  padding-right: min(8em,2%);
   /* Typography */
   color: #333;
+  line-height: 1.6;
+}
+.textbodyleftaligned{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 1100px;
+  text-align: start;
+  align-items: start;
+  justify-content: left;
+  align-content: start;
+  font-family:  Roboto, sans-serif;
+  /* Modern Aesthetics */
   line-height: 1.6;
 }
 .navbar {
@@ -456,13 +508,17 @@ iframe {
     padding: 0;
   }
   .scroll-container {
-    width: 90vw;       /* Make it take up more screen width on mobile */
-    margin-left: 5vw;
+    width: 80vw;       /* Make it take up more screen width on mobile */
     height: 250px;     /* Reduce height so images aren't huge on small screens */
   }
   .image-wrapper img {
     height: 100%;      /* Respects the new 250px container height */
     max-width: 85vw;   /* Prevents a single wide image from being wider than the phone */
+  }
+  .image_wrapper2 img {
+    max-width: 100%;           /* Prevents the video from overflowing the screen */
+    aspect-ratio: 9/16;      /* Keeps the video shape perfect on all devices */
+    height: auto;
   }
     .image_links img{
       display: block;   /* Images are inline by default; block allows auto-margins */
