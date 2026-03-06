@@ -547,14 +547,17 @@ iframe {
     width: 80vw;       /* Make it take up more screen width on mobile */
     height: 250px;     /* Reduce height so images aren't huge on small screens */
   }
+  .image-container{
+    width:80vw;
+    height: 250px;
+  }
   .image-wrapper img {
     height: 100%;      /* Respects the new 250px container height */
     max-width: 85vw;   /* Prevents a single wide image from being wider than the phone */
   }
   .image_wrapper2 img {
-    max-width: 100%;           /* Prevents the video from overflowing the screen */
-    aspect-ratio: 9/16;      /* Keeps the video shape perfect on all devices */
-    height: auto;
+    max-width: 85vw;       /* Make it take up more screen width on mobile */
+    height: 100%;
   }
     .image_links img{
       display: block;   /* Images are inline by default; block allows auto-margins */
