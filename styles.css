@@ -63,7 +63,7 @@ hr.thick-line {
 }
 
 .scroll-container {
-  width: 600px;
+  width: 800px;
   overflow: hidden;
   position: relative;
   /* Use display flex to center the wrapper itself if needed */
@@ -71,7 +71,7 @@ hr.thick-line {
   align-content: center;
   align-items: center;
   justify-content: center;
-  max-height: 600px;
+  max-height: 800px;
 }
 
 .image-wrapper {
@@ -238,6 +238,8 @@ iframe {
   /* Typography */
   color: #333;
   line-height: 1.6;
+  justify-content: center;
+  align-items:center;
 }
 
 .left-div, .right-div {
