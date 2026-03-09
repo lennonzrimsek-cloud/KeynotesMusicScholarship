@@ -604,6 +604,7 @@ iframe {
     #navbar_logo {
       font-size: 1.3rem;
       padding: 0 0 0 0;
+      text-align: center;
     }
 
     #mobile-menu.is-active .bar:nth-child(2) {
