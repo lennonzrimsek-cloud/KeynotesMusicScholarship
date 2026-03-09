@@ -538,6 +538,7 @@ iframe {
     width: 100%;
     position: relative; /* Add this so the menu attaches to the bottom of this div */
     padding: 0;
+    margin: 0 auto;
   }
   .scroll-container {
     width: 80vw;       /* Make it take up more screen width on mobile */
